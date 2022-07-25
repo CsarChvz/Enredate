@@ -67,6 +67,9 @@ export default class DrawerNavigator extends React.Component {
 
           {/* Faltaría  el logout -- Se pone como si fuera un componente para tener noción */}
           {/* <Drawer.Screen name="Logout" component={LogoutScreen} /> */}
+
+          {/* --- Usar el flujo de autenticación --- */}
+          {/* https://reactnavigation.org/docs/auth-flow */}
         </Drawer.Navigator>
       </NavigationContainer>
     );
