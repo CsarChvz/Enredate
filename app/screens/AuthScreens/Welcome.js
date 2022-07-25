@@ -3,10 +3,11 @@ import React from "react";
 
 export default class Welcome extends React.Component {
   goBack() {
-    this.props.navigation.navigate("Register");
+    this.props.navigation.navigate("Login");
   }
   componentDidMount() {
-    console.log(console.log(this.props));
+    console.log("Welcome componentDidMount");
+    console.log(this.props);
   }
   render() {
     return (

@@ -8,7 +8,7 @@ export default class Register extends React.Component {
         <View
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
         >
-          <Button onPress={() => navigation.goBack()} title="Go back home" />
+          <Text>Registrarse</Text>
         </View>
       </NativeBaseProvider>
     );
