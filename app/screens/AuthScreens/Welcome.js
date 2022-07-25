@@ -1,12 +1,14 @@
+import { Center, NativeBaseProvider, Text } from "native-base";
 import React from "react";
 
 export default class Welcome extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Welcome</h1>
-        <p>This is the welcome screen.</p>
-      </div>
+      <NativeBaseProvider>
+        <Center>
+          <Text>Welcome Screen</Text>
+        </Center>
+      </NativeBaseProvider>
     );
   }
 }

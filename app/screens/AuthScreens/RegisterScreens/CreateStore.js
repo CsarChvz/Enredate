@@ -1,16 +1,14 @@
+import { Center, NativeBaseProvider, Text } from "native-base";
 import React from "react";
 
-export class CreateStore extends React.Component {
+export default class CreateStore extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Create Store</h1>
-        <p>This is the Create Store screen.</p>
-      </div>
+      <NativeBaseProvider>
+        <Center>
+          <Text>CreateStore Screen</Text>
+        </Center>
+      </NativeBaseProvider>
     );
   }
-}
-
-{
-  /* Se podría hacer un stack para el registro */
 }

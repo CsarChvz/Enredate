@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // Pantallas de autenticación
 import { LoginScreen, WelcomeScreen } from "../../screens/AuthScreens";
 // Stack Register
-import { RegisterStack } from ".";
+import RegisterStack from "./RegisterStack";
 const AuthStack = createNativeStackNavigator();
 
 const AuthNavigator = () => {

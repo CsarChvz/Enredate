@@ -1,16 +1,14 @@
+import { Center, NativeBaseProvider, Text } from "native-base";
 import React from "react";
 
-export class Choose extends React.Component {
+export default class Choose extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Choose</h1>
-        <p>This is the Choose screen.</p>
-      </div>
+      <NativeBaseProvider>
+        <Center>
+          <Text>Choose Screen</Text>
+        </Center>
+      </NativeBaseProvider>
     );
   }
-}
-
-{
-  /* Se podría hacer un stack para el registro */
 }
