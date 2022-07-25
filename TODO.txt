@@ -1,0 +1,5 @@
+Pantallas que faltan: 
+    - Formulario para creacion de tienda
+    - Formulario para publicar un producto
+        { Hacer otro formulario para editar el producto o utilizar este mismo}
+    - Vista del producto 
