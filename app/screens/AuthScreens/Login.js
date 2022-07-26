@@ -42,6 +42,8 @@ export default class Login extends React.Component {
             }}
             onSubmit={async (values) => {
               const user = await signIn(values.email, values.password);
+
+              // Después de que el usuario se loguea, debemos de guardar el token en el expo-secure-store
               user.user.getIdToken().then(token => {
                 console.log(token)
               })
