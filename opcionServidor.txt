@@ -1,0 +1,1 @@
+https://www.sqlservercentral.com/articles/building-dynamic-react-apps-with-sql-server-data-2

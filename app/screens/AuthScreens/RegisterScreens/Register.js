@@ -19,7 +19,6 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 
 import { signUp } from "../../../utils/auth.client";
-import { getAuth } from "firebase/auth";
 // Esquema de validación
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
@@ -54,10 +53,10 @@ export default class Register extends React.Component {
               password: "",
             }}
             onSubmit={async (values) => {
-              console.log("Rascal --")
-              console.log(
-                await signUp(values.email, values.password, values.name)
-              );
+              const pendejada = await signUp(values.email, values.password, values.name)
+              pendejada.user.getIdToken().then(token => {
+                console.log(token)
+              })
             }}
             validationSchema={validationSchema}
           >

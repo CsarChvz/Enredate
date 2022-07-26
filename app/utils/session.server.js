@@ -6,6 +6,10 @@ async function createUserSession(idToken) {
   await SecureStore.setItemAsync("sessionToken", token);
 }
 
+async function setUserUid(uid) {
+  await SecureStore.setItemAsync("uid", uid);
+}
+
 async function getUserSession() {
   const token = await SecureStore.getItemAsync("sessionToken");
   return token;

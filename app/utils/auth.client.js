@@ -16,20 +16,15 @@ if (!Firebase?.apps?.length) {
 const auth = getAuth(Firebase);
 async function signUp(email, password, name) {
   const token = await createUserWithEmailAndPassword(auth, email, password);
-  await updateProfile(token.user, { displayName: name }).then((user) => {
-
-    // A la hora de ejecutar este codigo nos manda un unidefine, pero el nombre si se actualiza despues
-    //console.log("Then"+user);
-  });
+  await updateProfile(token.user, { displayName: name })
   return token;
 }
 
 async function signIn(email, password) {
-  const auth = getAuth();
   return signInWithEmailAndPassword(auth, email, password);
 }
 
-async function signOutFirebase() {
-  await signOut(getAuth());
+async function signOutUser() {
+  await signOut(auth).catch((error) => { console.log(error) });
 }
-export { signUp, signIn, auth };
+export { signUp, signIn, signOutUser,auth };

@@ -4,7 +4,10 @@ import { View, Button } from "react-native";
 // Navigation
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
+import { signOutUser, auth } from "../../utils/auth.client";
 
+
+import { signOut } from "firebase/auth";
 // --- Pantallas de ejemplo ---
 function HomeScreen({ navigation }) {
   return (
@@ -47,6 +50,14 @@ function ConfigurationScreen({ navigation }) {
     </View>
   );
 }
+
+function LogoutScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Button onPress={() => signOut(auth)} title="SignOut" />
+    </View>
+  );
+}
 const Drawer = createDrawerNavigator();
 
 // Se crea un componente de clase o un COMPONENTE CLASS
@@ -66,6 +77,8 @@ export default class DrawerNavigator extends React.Component {
 
         {/* Faltaría  el logout -- Se pone como si fuera un componente para tener noción */}
         {/* <Drawer.Screen name="Logout" component={LogoutScreen} /> */}
+        <Drawer.Screen name="Logout" component={LogoutScreen} />  
+
 
         {/* --- Usar el flujo de autenticación --- */}
         {/* https://reactnavigation.org/docs/auth-flow */}
