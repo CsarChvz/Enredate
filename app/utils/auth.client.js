@@ -17,7 +17,9 @@ const auth = getAuth(Firebase);
 async function signUp(email, password, name) {
   const token = await createUserWithEmailAndPassword(auth, email, password);
   await updateProfile(token.user, { displayName: name }).then((user) => {
-    console.log(user);
+
+    // A la hora de ejecutar este codigo nos manda un unidefine, pero el nombre si se actualiza despues
+    //console.log("Then"+user);
   });
   return token;
 }

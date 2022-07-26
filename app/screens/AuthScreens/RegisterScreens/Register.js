@@ -45,6 +45,8 @@ export default class Register extends React.Component {
           <Text fontSize={"lg"} px={"2rem"} py={5}>
             Esta pantalla es para Registrarse
           </Text>
+
+          {/* Mejorar los componentes para que sean reutilizables y se vea limpio el código */}
           <Formik
             initialValues={{
               name: "",
@@ -52,6 +54,7 @@ export default class Register extends React.Component {
               password: "",
             }}
             onSubmit={async (values) => {
+              console.log("Rascal --")
               console.log(
                 await signUp(values.email, values.password, values.name)
               );
