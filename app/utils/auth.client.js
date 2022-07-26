@@ -21,8 +21,8 @@ async function signUp(email, password, name) {
 }
 
 async function signIn(email, password) {
-  return signInWithEmailAndPassword(auth, email, password);
+  const user = await signInWithEmailAndPassword(auth, email, password);
+  return user;
 }
 
-
-export { signUp, signIn,auth };
+export { signUp, signIn, auth };

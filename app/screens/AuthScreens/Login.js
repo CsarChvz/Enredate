@@ -17,9 +17,9 @@ import React from "react";
 
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { signIn } from "../../utils/auth.client";
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
-  name: Yup.string().required("Required"),
   password: Yup.string()
     .min(6, "Must be at least 6 characters") // .required("Required")
     .required("Required"),
@@ -40,8 +40,11 @@ export default class Login extends React.Component {
               email: "",
               password: "",
             }}
-            onSubmit={(values) => {
-              console.log(values);
+            onSubmit={async (values) => {
+              const user = await signIn(values.email, values.password);
+              user.user.getIdToken().then(token => {
+                console.log(token)
+              })
             }}
             validationSchema={validationSchema}
           >
