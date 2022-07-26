@@ -24,7 +24,5 @@ async function signIn(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }
 
-async function signOutUser() {
-  await signOut(auth).catch((error) => { console.log(error) });
-}
-export { signUp, signIn, signOutUser,auth };
+
+export { signUp, signIn,auth };
