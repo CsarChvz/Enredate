@@ -53,25 +53,23 @@ const Drawer = createDrawerNavigator();
 export default class DrawerNavigator extends React.Component {
   render() {
     return (
-      <NavigationContainer>
-        <Drawer.Navigator initialRouteName="Home">
-          {/* En cada Screen va a estar un stack, para acceder a las pantallas */}
+      <Drawer.Navigator initialRouteName="Home">
+        {/* En cada Screen va a estar un stack, para acceder a las pantallas */}
 
-          {/* --- En cada Item del Drawer debe de haber un stack */}
-          <Drawer.Screen name="Home" component={HomeScreen} />
-          <Drawer.Screen name="MyStore" component={MyStoreScreen} />
-          <Drawer.Screen name="Orders" component={OrderScreen} />
-          <Drawer.Screen name="Cart" component={CartScreen} />
-          <Drawer.Screen name="Configuration" component={ConfigurationScreen} />
-          {/* --- En cada Item del Drawer debe de haber un stack */}
+        {/* --- En cada Item del Drawer debe de haber un stack */}
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="MyStore" component={MyStoreScreen} />
+        <Drawer.Screen name="Orders" component={OrderScreen} />
+        <Drawer.Screen name="Cart" component={CartScreen} />
+        <Drawer.Screen name="Configuration" component={ConfigurationScreen} />
+        {/* --- En cada Item del Drawer debe de haber un stack */}
 
-          {/* Faltaría  el logout -- Se pone como si fuera un componente para tener noción */}
-          {/* <Drawer.Screen name="Logout" component={LogoutScreen} /> */}
+        {/* Faltaría  el logout -- Se pone como si fuera un componente para tener noción */}
+        {/* <Drawer.Screen name="Logout" component={LogoutScreen} /> */}
 
-          {/* --- Usar el flujo de autenticación --- */}
-          {/* https://reactnavigation.org/docs/auth-flow */}
-        </Drawer.Navigator>
-      </NavigationContainer>
+        {/* --- Usar el flujo de autenticación --- */}
+        {/* https://reactnavigation.org/docs/auth-flow */}
+      </Drawer.Navigator>
     );
   }
 }
